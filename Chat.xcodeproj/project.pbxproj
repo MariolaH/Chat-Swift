@@ -17,6 +17,7 @@
 		ECE0AA9A2B50924300B9FA6E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0AA992B50924300B9FA6E /* RegisterViewController.swift */; };
 		ECE0AA9C2B50925B00B9FA6E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0AA9B2B50925B00B9FA6E /* WelcomeViewController.swift */; };
 		ECE0AA9E2B5092BB00B9FA6E /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0AA9D2B5092BB00B9FA6E /* AlertViewController.swift */; };
+		ECE0AAA02B5093AF00B9FA6E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0AA9F2B5093AF00B9FA6E /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		ECE0AA992B50924300B9FA6E /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		ECE0AA9B2B50925B00B9FA6E /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		ECE0AA9D2B5092BB00B9FA6E /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		ECE0AA9F2B5093AF00B9FA6E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				ECE0AA8C2B508CAC00B9FA6E /* LaunchScreen.storyboard */,
 				ECE0AA8F2B508CAC00B9FA6E /* Info.plist */,
 				ECE0AA9D2B5092BB00B9FA6E /* AlertViewController.swift */,
+				ECE0AA9F2B5093AF00B9FA6E /* Constants.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -157,6 +160,7 @@
 				ECE0AA982B50921E00B9FA6E /* LoginViewController.swift in Sources */,
 				ECE0AA842B508CAA00B9FA6E /* SceneDelegate.swift in Sources */,
 				ECE0AA9C2B50925B00B9FA6E /* WelcomeViewController.swift in Sources */,
+				ECE0AAA02B5093AF00B9FA6E /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
