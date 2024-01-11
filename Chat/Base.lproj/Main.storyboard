@@ -12,7 +12,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="tYQ-of-0F5">
             <objects>
-                <viewController id="4Ii-p6-17b" customClass="WelcomeViewController" customModule="Lets_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="4Ii-p6-17b" customClass="WelcomeViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bp9-Hb-5lp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +75,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="96J-dd-xTT"/>
                     <connections>
-                        <outlet property="titleLabel" destination="c2Z-gX-bWT" id="xBS-tb-x18"/>
+                        <outlet property="titleLabel" destination="c2Z-gX-bWT" id="dWL-5z-1dV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uz1-r7-NzG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -85,7 +85,7 @@
         <!--Register View Controller-->
         <scene sceneID="fuF-F6-htT">
             <objects>
-                <viewController id="dCq-33-6ky" customClass="RegisterViewController" customModule="Lets_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dCq-33-6ky" customClass="RegisterViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eGv-WJ-NbR">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -183,7 +183,7 @@
         <!--Login View Controller-->
         <scene sceneID="fUR-Hx-JKB">
             <objects>
-                <viewController id="WzY-EN-RgR" customClass="LoginViewController" customModule="Lets_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="WzY-EN-RgR" customClass="LoginViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rFG-Pg-IAA">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -278,7 +278,7 @@
         <!--Chat View Controller-->
         <scene sceneID="EMT-TI-BPR">
             <objects>
-                <viewController id="Dc0-XA-RB6" userLabel="Chat View Controller" customClass="ChatViewController" customModule="Lets_Chat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Dc0-XA-RB6" userLabel="Chat View Controller" customClass="ChatViewController" customModule="Chat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u3a-wh-xgP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
