@@ -66,6 +66,9 @@
 		ECE0AA802B508CAA00B9FA6E /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				ECE0AAA12B5373EF00B9FA6E /* Model */,
+				ECE0AAA22B5373F700B9FA6E /* View */,
+				ECE0AAA32B5373FE00B9FA6E /* Controller */,
 				ECE0AA812B508CAA00B9FA6E /* AppDelegate.swift */,
 				ECE0AA832B508CAA00B9FA6E /* SceneDelegate.swift */,
 				ECE0AA952B50920A00B9FA6E /* ChatViewController.swift */,
@@ -74,12 +77,33 @@
 				ECE0AA9B2B50925B00B9FA6E /* WelcomeViewController.swift */,
 				ECE0AA9F2B5093AF00B9FA6E /* Constants.swift */,
 				ECE0AA9D2B5092BB00B9FA6E /* AlertViewController.swift */,
-				ECE0AA872B508CAA00B9FA6E /* Main.storyboard */,
 				ECE0AA8A2B508CAC00B9FA6E /* Assets.xcassets */,
 				ECE0AA8C2B508CAC00B9FA6E /* LaunchScreen.storyboard */,
 				ECE0AA8F2B508CAC00B9FA6E /* Info.plist */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		ECE0AAA12B5373EF00B9FA6E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		ECE0AAA22B5373F700B9FA6E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ECE0AA872B508CAA00B9FA6E /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ECE0AAA32B5373FE00B9FA6E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
