@@ -48,7 +48,7 @@
                                     <segue destination="dCq-33-6ky" kind="show" id="Bz1-kd-fzx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️Let's Chat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="c2Z-gX-bWT" userLabel="TitleLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚡️Chat" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="c2Z-gX-bWT" userLabel="TitleLabel">
                                 <rect key="frame" x="52" y="396" width="289" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="BZy-t9-sCX"/>
@@ -342,7 +342,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="gpY-mv-bjO">
                             <color key="tintColor" name="BrandLightPurple"/>
                             <connections>
-                                <action selector="LogOutPressed:" destination="Dc0-XA-RB6" id="zzj-Kw-tPQ"/>
+                                <action selector="logOutButton:" destination="Dc0-XA-RB6" id="aEq-eO-Bfc"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -375,7 +375,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="on5-0p-FOO"/>
+        <segue reference="HUM-2g-ERb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>
