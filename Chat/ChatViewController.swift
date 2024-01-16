@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ChatViewController: UIViewController {
 
@@ -14,10 +15,20 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        title = "⚡️ Chat"
+        navigationItem.hidesBackButton = true
     }
 
     @IBAction func sendPressed(_ sender: UIButton) {
     }
     
+    @IBAction func logOutButton(_ sender: UIBarButtonItem) {
+        do {
+            try Auth.auth().signOut()
+            //this line of code sends user to the root VC
+            navigationController?.popToRootViewController(animated: true)
+        } catch let signOutError as NSError {
+            print("Error signing out: %@", signOutError)
+        }
+    }
 }
