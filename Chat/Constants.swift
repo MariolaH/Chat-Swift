@@ -6,6 +6,8 @@
 //
 
 struct Constants {
+    //Static - adding static keyword infront of the let keyword means that that line do code has now become a type property
+    //its a property that's associated with the Constant data type
     static let appName = "⚡️ Chat"
     static let cellIdentifier = "ReusableCell"
     static let cellNibName = "MessageCell"
