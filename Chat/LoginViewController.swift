@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
 
     @IBAction func loginPressed(_ sender: UIButton) {
         if let email = emailTextfield.text, let password = passwordTextfield.text {
-            //the user's account data will live in the authResult objest that we get back, it is used inside the closure block  or can check to see if there were any errors
+            //the user's account data will live in the authResult object that we get back, it is used inside the closure block  or can check to see if there were any errors
             Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
                 if let e = error {
                     print(e.localizedDescription)
