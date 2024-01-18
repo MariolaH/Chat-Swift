@@ -27,6 +27,7 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         title = "⚡️ Chat"
         navigationItem.hidesBackButton = true
+        tableView.register(UINib(nibName: Constants.cellNibName, bundle: nil), forCellReuseIdentifier: Constants.cellIdentifier)
     }
 
     @IBAction func sendPressed(_ sender: UIButton) {
@@ -58,11 +59,11 @@ extension ChatViewController : UITableViewDataSource {
     //this method is going to get called for as many rows as you have in the tableView, (the func about this one) and each time it's asking for a cell for a particular row.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //IndexPath (for) is simply the current one that the tableView is requesting some data for
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! MessageCell
         //give cell some data
         //textLabel - corresponds to the main label in the cell
         //[indexPath.row] - this line represnts the position of the messages ie. 0, messages[0] - going to pull the first message from the message array
-        cell.textLabel?.text = messages[indexPath.row].body
+        cell.label?.text = messages[indexPath.row].body
         //return the cell and it will be slotted into the tableview
         return cell
     }
