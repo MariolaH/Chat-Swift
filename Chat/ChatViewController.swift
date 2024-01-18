@@ -43,7 +43,9 @@ class ChatViewController: UIViewController {
     }
 }
 
-
+//DataSource is the protocol responsible for populating the tableView
+//func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) - how many cell tableView needs
+//func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell - which cells to put into the tableView
 extension ChatViewController : UITableViewDataSource {
     //how many rows/cells want in tableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,7 +61,8 @@ extension ChatViewController : UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath)
         //give cell some data
         //textLabel - corresponds to the main label in the cell
-        cell.textLabel?.text = "This is a cell"
+        //[indexPath.row] - this line represnts the position of the messages ie. 0, messages[0] - going to pull the first message from the message array
+        cell.textLabel?.text = messages[indexPath.row].body
         //return the cell and it will be slotted into the tableview
         return cell
     }
