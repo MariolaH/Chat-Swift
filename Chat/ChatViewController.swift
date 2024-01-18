@@ -7,7 +7,6 @@
 
 import UIKit
 import FirebaseAuth
-//Chat VC
 
 class ChatViewController: UIViewController {
 
@@ -46,8 +45,23 @@ class ChatViewController: UIViewController {
 
 
 extension ChatViewController : UITableViewDataSource {
+    //how many rows/cells want in tableView
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //dynamically returning number of rows depending on how many messages are in the message array(up top)
+        return messages.count
+    }
+    
+    //IndexPath is the position
+    //this method is asking for a UITableViewCell that it should display in each and every row of our table view
+    //this method is going to get called for as many rows as you have in the tableView, (the func about this one) and each time it's asking for a cell for a particular row.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        //IndexPath (for) is simply the current one that the tableView is requesting some data for
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath)
+        //give cell some data
+        //textLabel - corresponds to the main label in the cell
+        cell.textLabel?.text = "This is a cell"
+        //return the cell and it will be slotted into the tableview
+        return cell
     }
     
     
