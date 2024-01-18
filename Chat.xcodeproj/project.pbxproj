@@ -20,6 +20,7 @@
 		ECE0AA9E2B5092BB00B9FA6E /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0AA9D2B5092BB00B9FA6E /* AlertViewController.swift */; };
 		ECE0AAA02B5093AF00B9FA6E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0AA9F2B5093AF00B9FA6E /* Constants.swift */; };
 		ECE0AAA52B544B7C00B9FA6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECE0AAA42B544B7C00B9FA6E /* GoogleService-Info.plist */; };
+		ECE0AAA72B56DAD100B9FA6E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0AAA62B56DAD100B9FA6E /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		ECE0AA9D2B5092BB00B9FA6E /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		ECE0AA9F2B5093AF00B9FA6E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ECE0AAA42B544B7C00B9FA6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ECE0AAA62B56DAD100B9FA6E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		F86C8B572267949FB81B5EA8 /* Pods-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.release.xcconfig"; path = "Target Support Files/Pods-Chat/Pods-Chat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 				ECE0AA8C2B508CAC00B9FA6E /* LaunchScreen.storyboard */,
 				ECE0AA8F2B508CAC00B9FA6E /* Info.plist */,
 				ECE0AAA42B544B7C00B9FA6E /* GoogleService-Info.plist */,
+				ECE0AAA62B56DAD100B9FA6E /* Message.swift */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				ECE0AA822B508CAA00B9FA6E /* AppDelegate.swift in Sources */,
 				ECE0AA9E2B5092BB00B9FA6E /* AlertViewController.swift in Sources */,
 				ECE0AA962B50920A00B9FA6E /* ChatViewController.swift in Sources */,
+				ECE0AAA72B56DAD100B9FA6E /* Message.swift in Sources */,
 				ECE0AA9A2B50924300B9FA6E /* RegisterViewController.swift in Sources */,
 				ECE0AA982B50921E00B9FA6E /* LoginViewController.swift in Sources */,
 				ECE0AA842B508CAA00B9FA6E /* SceneDelegate.swift in Sources */,
