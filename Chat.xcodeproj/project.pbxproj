@@ -21,6 +21,8 @@
 		ECE0AAA02B5093AF00B9FA6E /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0AA9F2B5093AF00B9FA6E /* Constants.swift */; };
 		ECE0AAA52B544B7C00B9FA6E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECE0AAA42B544B7C00B9FA6E /* GoogleService-Info.plist */; };
 		ECE0AAA72B56DAD100B9FA6E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0AAA62B56DAD100B9FA6E /* Message.swift */; };
+		ECE0AAAA2B59B7B000B9FA6E /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECE0AAA82B59B7B000B9FA6E /* MessageCell.swift */; };
+		ECE0AAAB2B59B7B000B9FA6E /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ECE0AAA92B59B7B000B9FA6E /* MessageCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +43,8 @@
 		ECE0AA9F2B5093AF00B9FA6E /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ECE0AAA42B544B7C00B9FA6E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ECE0AAA62B56DAD100B9FA6E /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		ECE0AAA82B59B7B000B9FA6E /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		ECE0AAA92B59B7B000B9FA6E /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		F86C8B572267949FB81B5EA8 /* Pods-Chat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Chat.release.xcconfig"; path = "Target Support Files/Pods-Chat/Pods-Chat.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,6 +129,8 @@
 			isa = PBXGroup;
 			children = (
 				ECE0AA872B508CAA00B9FA6E /* Main.storyboard */,
+				ECE0AAA82B59B7B000B9FA6E /* MessageCell.swift */,
+				ECE0AAA92B59B7B000B9FA6E /* MessageCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -196,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECE0AAAB2B59B7B000B9FA6E /* MessageCell.xib in Resources */,
 				ECE0AA8E2B508CAC00B9FA6E /* LaunchScreen.storyboard in Resources */,
 				ECE0AAA52B544B7C00B9FA6E /* GoogleService-Info.plist in Resources */,
 				ECE0AA8B2B508CAC00B9FA6E /* Assets.xcassets in Resources */,
@@ -254,6 +261,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECE0AA822B508CAA00B9FA6E /* AppDelegate.swift in Sources */,
+				ECE0AAAA2B59B7B000B9FA6E /* MessageCell.swift in Sources */,
 				ECE0AA9E2B5092BB00B9FA6E /* AlertViewController.swift in Sources */,
 				ECE0AA962B50920A00B9FA6E /* ChatViewController.swift in Sources */,
 				ECE0AAA72B56DAD100B9FA6E /* Message.swift in Sources */,
