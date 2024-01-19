@@ -31,6 +31,13 @@ class ChatViewController: UIViewController {
     }
 
     @IBAction func sendPressed(_ sender: UIButton) {
+        //messageBody - stores the messaga body
+        //if messageTextfield.text is not nil, save it inside messageBody
+        //if there is a current user (Auth.auth().currentUser?.email) logged in, then save their email inside messageBody
+        //if these 2 pieces of info are not nil, go into this first block of code where can send these pieces of data to Firebase Firestore.
+        if let messageBody = messageTextfield.text, let senderBody = Auth.auth().currentUser?.email {
+            
+        }
     }
     
     @IBAction func logOutButton(_ sender: UIBarButtonItem) {
