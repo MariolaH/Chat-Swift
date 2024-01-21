@@ -33,6 +33,8 @@ class ChatViewController: UIViewController {
     //Then going to use it to populate the tableView
     func loadMessages() {
         messages = []
+        //db.collection().getDocuments, this operation is performed in the background
+        //This is to ensure that the data fetching process does not block the main thread, which is responsible for maintaining a smooth user interface
         db.collection(Constants.FStore.collectionName).getDocuments { (querySnapshot, error) in
             if let e = error {
                 print("There was an issue retrieving data from Firestore. \(e)")
@@ -52,6 +54,10 @@ class ChatViewController: UIViewController {
                             let newMessage = Message(sender: messageSender, body: messageBody)
                             //tapping into the messages array and appending new messages to it
                             self.messages.append(newMessage)
+                            //UI updates, like reloading a table view, must be done on the main thread. However, since the Firestore data fetching is done in the background, you are not on the main thread when you reach the point of needing to update the UI.
+                            //DispatchQueue.main.async - is saying, "Schedule this block of code to be executed on the main thread as soon as possible."
+                            //DispatchQueue.main is a reference to the main dispatch queue, which is associated with the main thread of the application.
+                            //.async is a method that asynchronously dispatches the enclosed block of code for execution on the main queue.
                             DispatchQueue.main.async {
                                 //this is manipulating the user interface
                                 //what this does it taps into the tableView and triggers the data source methods again
