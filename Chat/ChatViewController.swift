@@ -32,10 +32,14 @@ class ChatViewController: UIViewController {
     //this method pulls up all the current data inside the database.
     //Then going to use it to populate the tableView
     func loadMessages() {
-        messages = []
         //db.collection().getDocuments, this operation is performed in the background
         //This is to ensure that the data fetching process does not block the main thread, which is responsible for maintaining a smooth user interface
-        db.collection(Constants.FStore.collectionName).getDocuments { (querySnapshot, error) in
+        //addSnapshotListener  is going to listen for changes in collection(Constants.FStore.collectionName)
+        //whenever a new item is added its going to trigger all of the code inside the closure
+        db.collection(Constants.FStore.collectionName).addSnapshotListener { (querySnapshot, error) in
+            //move this line of code into the closure. Whenever a new item is added to the collection, we empty out the message array and add the fresh messages from scratch
+            //emptying message array inside the closure
+            self.messages = []
             if let e = error {
                 print("There was an issue retrieving data from Firestore. \(e)")
             } else {
@@ -49,7 +53,7 @@ class ChatViewController: UIViewController {
                         //By using a comma , you're chaining multiple optional bindings together. This means that the code block inside the braces will only execute if both conditions are true: data[Constants.FStore.senderField] can be downcast to a String and assigned to sender, and data[Constants.FStore.bodyField] can also be downcast to a String and assigned to messageBody.
                         if let messageSender = data[Constants.FStore.senderField] as? String,
                            //Also conditional downcast to String
-                            let messageBody = data[Constants.FStore.bodyField] as? String {
+                           let messageBody = data[Constants.FStore.bodyField] as? String {
                             //newMessage is ready to add to the array of messages which is currently empty
                             let newMessage = Message(sender: messageSender, body: messageBody)
                             //tapping into the messages array and appending new messages to it
@@ -79,7 +83,9 @@ class ChatViewController: UIViewController {
             //data - what is being sent to Firestore
             db.collection(Constants.FStore.collectionName).addDocument(data: [
                 Constants.FStore.senderField: messageSender,
-                Constants.FStore.bodyField: messageBody]) { (error) in
+                Constants.FStore.bodyField: messageBody,
+                //get ahold of current time - use Date object
+                Constants.FStore.dateField: Date().timeIntervalSince1970]) { (error) in
                     if let e = error {
                         print("There was an issue saving data to firestore, \(e)")
                     } else {
