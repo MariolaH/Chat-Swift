@@ -36,7 +36,8 @@ class ChatViewController: UIViewController {
         //This is to ensure that the data fetching process does not block the main thread, which is responsible for maintaining a smooth user interface
         //addSnapshotListener  is going to listen for changes in collection(Constants.FStore.collectionName)
         //whenever a new item is added its going to trigger all of the code inside the closure
-        db.collection(Constants.FStore.collectionName).addSnapshotListener { (querySnapshot, error) in
+        //when get the collection back, going to order it by dateField in ascending order, then going to addSnapshotListener to listen for changes
+        db.collection(Constants.FStore.collectionName).order(by: Constants.FStore.dateField).addSnapshotListener { (querySnapshot, error) in
             //move this line of code into the closure. Whenever a new item is added to the collection, we empty out the message array and add the fresh messages from scratch
             //emptying message array inside the closure
             self.messages = []
