@@ -85,7 +85,6 @@ class ChatViewController: UIViewController {
                 Constants.FStore.senderField: messageSender,
                 Constants.FStore.bodyField: messageBody,
                 //get ahold of current time - use Date object
-                
                 Constants.FStore.dateField: Date().timeIntervalSince1970]) { (error) in
                     if let e = error {
                         print("There was an issue saving data to firestore, \(e)")
@@ -107,6 +106,7 @@ class ChatViewController: UIViewController {
     }
 }
 
+//MARK: - TableView
 //DataSource is the protocol responsible for populating the tableView
 //func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) - how many cell tableView needs
 //func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell - which cells to put into the tableView
