@@ -85,6 +85,7 @@ class ChatViewController: UIViewController {
                 Constants.FStore.senderField: messageSender,
                 Constants.FStore.bodyField: messageBody,
                 //get ahold of current time - use Date object
+                
                 Constants.FStore.dateField: Date().timeIntervalSince1970]) { (error) in
                     if let e = error {
                         print("There was an issue saving data to firestore, \(e)")
