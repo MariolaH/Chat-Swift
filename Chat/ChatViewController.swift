@@ -37,7 +37,9 @@ class ChatViewController: UIViewController {
         //addSnapshotListener  is going to listen for changes in collection(Constants.FStore.collectionName)
         //whenever a new item is added its going to trigger all of the code inside the closure
         //when get the collection back, going to order it by dateField in ascending order, then going to addSnapshotListener to listen for changes
-        db.collection(Constants.FStore.collectionName).order(by: Constants.FStore.dateField).addSnapshotListener { (querySnapshot, error) in
+        db.collection(Constants.FStore.collectionName)
+            .order(by: Constants.FStore.dateField)
+            .addSnapshotListener { (querySnapshot, error) in
             //move this line of code into the closure. Whenever a new item is added to the collection, we empty out the message array and add the fresh messages from scratch
             //emptying message array inside the closure
             self.messages = []
@@ -67,6 +69,10 @@ class ChatViewController: UIViewController {
                                 //this is manipulating the user interface
                                 //what this does it taps into the tableView and triggers the data source methods again
                                 self.tableView.reloadData()
+                                //this line is creating which row we want to scroll to
+                                //need to -1 to get a hold of the last item in our mwssages array
+                                let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
+                                self.tableView.scrollToRow(at: indexPath, at: .top, animated: false)
                             }
                         }
                     }
@@ -91,6 +97,9 @@ class ChatViewController: UIViewController {
                         print("There was an issue saving data to firestore, \(e)")
                     } else {
                         print("Sucessfully saved data")
+                        DispatchQueue.main.async {
+                            self.messageTextfield.text = ""
+                        }
                     }
                 }
         }
@@ -121,13 +130,34 @@ extension ChatViewController : UITableViewDataSource {
     //IndexPath is the position
     //this method is asking for a UITableViewCell that it should display in each and every row of our table view
     //this method is going to get called for as many rows as you have in the tableView, (the func about this one) and each time it's asking for a cell for a particular row.
+    //tableView cellForRowAt gets called as many times as there are cells.
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let message = messages[indexPath.row]
         //IndexPath (for) is simply the current one that the tableView is requesting some data for
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.cellIdentifier, for: indexPath) as! MessageCell
         //give cell some data
         //textLabel - corresponds to the main label in the cell
         //[indexPath.row] - this line represnts the position of the messages ie. 0, messages[0] - going to pull the first message from the message array
-        cell.label?.text = messages[indexPath.row].body
+        cell.label?.text = message.body
+        
+        //this is checking if the messages that were sent were from the current user
+        //this is a message from the current user.
+        if message.sender == Auth.auth().currentUser?.email {
+            cell.leftImageView.isHidden = true
+            cell.rightImageView.isHidden = false
+            cell.messageBubble.backgroundColor = UIColor(named: Constants.BrandColors.lightPurple)
+            cell.label.textColor = UIColor(named: Constants.BrandColors.purple)
+        }
+        //This is a message from another sender
+        else {
+            cell.leftImageView.isHidden = false
+            cell.rightImageView.isHidden = true
+            cell.messageBubble.backgroundColor = UIColor(named: Constants.BrandColors.purple)
+            cell.label.textColor = UIColor(named: Constants.BrandColors.lightPurple)
+        }
+        
+        
+        
         //return the cell and it will be slotted into the tableview
         return cell
     }
