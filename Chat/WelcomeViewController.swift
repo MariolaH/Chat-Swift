@@ -9,6 +9,21 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
+    
+        //Just before the view shows up on screen
+    //navBar is hidden
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    //when transitioning to next screen navBar will be visible
+    override func viewWillDisappear(_ animated: Bool) {
+        //super - this mean the parent, UIViewController, which our class is inherting from, gets an opportunity to run its own code inside its own viewWillDisappear, and then afterwards, we can run our code which has our custom functionality
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         titleLabel.text = ""
