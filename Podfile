@@ -6,6 +6,7 @@ target 'Chat' do
   # Pods for Chat
   pod 'FirebaseAuth'
   pod 'FirebaseFirestore'
-  pod 'IQKeyboardManagerSwift'
+#  pod 'IQKeyboardManagerSwift'
+pod 'IQKeyboardManagerSwift', '6.3.0'
   
 end

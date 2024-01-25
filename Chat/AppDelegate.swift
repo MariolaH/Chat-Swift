@@ -9,6 +9,7 @@ import UIKit
 import FirebaseCore
 import FirebaseFirestore
 import FirebaseAuth
+import IQKeyboardManagerSwift
 
 //@main
 @UIApplicationMain
@@ -21,6 +22,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //This line of code creates the Firebase Firestore
         let db = Firestore.firestore()
         print(db)
+        IQKeyboardManager.shared.enable = true
+        IQKeyboardManager.shared.enableAutoToolbar = false
+        IQKeyboardManager.shared.overrideKeyboardAppearance = true
+        IQKeyboardManager.shared.keyboardAppearance = .dark
+        IQKeyboardManager.shared.keyboardDistanceFromTextField = 100.0
+        IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         return true
     }
 

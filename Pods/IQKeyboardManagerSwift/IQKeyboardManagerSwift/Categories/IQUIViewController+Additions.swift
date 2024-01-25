@@ -1,5 +1,5 @@
 //
-//  IQInvocation.swift
+//  IQUIViewController+Additions.swift
 // https://github.com/hackiftekhar/IQKeyboardManager
 // Copyright (c) 2013-16 Iftekhar Qurashi.
 //
@@ -21,25 +21,28 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-
 import UIKit
 
-@objc public class IQInvocation : NSObject {
-    @objc public weak var target: AnyObject?
-    @objc public var action: Selector
-    
-    @objc public init(_ target: AnyObject, _ action: Selector) {
-        self.target = target
-        self.action = action
-    }
-    
-    @objc public func invoke(from: Any) {
-        if let target = target {
-            UIApplication.shared.sendAction(action, to: target, from: from, for: UIEvent())
-        }
-    }
 
-    deinit {
-        target = nil
+private var kIQLayoutGuideConstraint = "kIQLayoutGuideConstraint"
+
+
+@objc public extension UIViewController {
+
+    /**
+    To set customized distance from keyboard for textField/textView. Can't be less than zero
+     
+     @deprecated    Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview
+    */
+    @available(*,deprecated, message: "Due to change in core-logic of handling distance between textField and keyboard distance, this layout contraint tweak is no longer needed and things will just work out of the box regardless of constraint pinned with safeArea/layoutGuide/superview.")
+    @IBOutlet @objc var IQLayoutGuideConstraint: NSLayoutConstraint? {
+        get {
+            
+            return objc_getAssociatedObject(self, &kIQLayoutGuideConstraint) as? NSLayoutConstraint
+        }
+
+        set(newValue) {
+            objc_setAssociatedObject(self, &kIQLayoutGuideConstraint, newValue,objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
     }
 }

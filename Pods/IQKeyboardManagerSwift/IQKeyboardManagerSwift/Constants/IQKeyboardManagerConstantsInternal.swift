@@ -1,7 +1,7 @@
 //
-//  IQUITableView+Additions.swift
-//  https://github.com/hackiftekhar/IQKeyboardManager
-//  Copyright (c) 2013-24 Iftekhar Qurashi.
+//  IQKeyboardManagerConstantsInternal.swift
+// https://github.com/hackiftekhar/IQKeyboardManager
+// Copyright (c) 2013-16 Iftekhar Qurashi.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,28 +21,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-import UIKit
 
-@available(iOSApplicationExtension, unavailable)
-@MainActor
-internal extension UITableView {
+import Foundation
 
-    func previousIndexPath(of indexPath: IndexPath) -> IndexPath? {
-        var previousRow: Int = indexPath.row - 1
-        var previousSection: Int = indexPath.section
 
-        // Fixing indexPath
-        if previousRow < 0 {
-            previousSection -= 1
-            if previousSection >= 0 {
-                previousRow = self.numberOfRows(inSection: previousSection) - 1
-            }
-        }
-
-        if previousRow >= 0, previousSection >= 0 {
-            return IndexPath(row: previousRow, section: previousSection)
-        } else {
-            return nil
-        }
-    }
-}

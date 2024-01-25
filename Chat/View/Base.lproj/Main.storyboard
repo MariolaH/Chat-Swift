@@ -318,6 +318,7 @@
                                 <color key="backgroundColor" name="BrandPurple"/>
                                 <constraints>
                                     <constraint firstItem="XlM-W3-7GZ" firstAttribute="top" secondItem="at3-e2-1FB" secondAttribute="top" constant="20" id="DB6-Uy-Td8"/>
+                                    <constraint firstAttribute="bottom" secondItem="qt3-rp-DLg" secondAttribute="bottom" constant="10" id="Iz1-Qj-RXa"/>
                                     <constraint firstItem="qt3-rp-DLg" firstAttribute="leading" secondItem="at3-e2-1FB" secondAttribute="leading" constant="30" id="ZbX-b4-eV1"/>
                                     <constraint firstItem="XlM-W3-7GZ" firstAttribute="leading" secondItem="qt3-rp-DLg" secondAttribute="trailing" constant="20" id="fge-bX-do9"/>
                                     <constraint firstAttribute="trailing" secondItem="XlM-W3-7GZ" secondAttribute="trailing" constant="20" id="k4o-Qw-4Ou"/>
@@ -340,7 +341,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="DfU-oJ-Bhq" userLabel="Navigation Item">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="gpY-mv-bjO">
-                            <color key="tintColor" name="BrandLightPurple"/>
+                            <color key="tintColor" name="BrandBlue"/>
                             <connections>
                                 <action selector="logOutButton:" destination="Dc0-XA-RB6" id="aEq-eO-Bfc"/>
                             </connections>
@@ -375,7 +376,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="on5-0p-FOO"/>
+        <segue reference="HUM-2g-ERb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="paperplane.fill" catalog="system" width="128" height="119"/>
@@ -396,7 +397,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemTealColor">
-            <color red="0.18823529410000001" green="0.69019607839999997" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
